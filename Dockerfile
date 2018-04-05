@@ -43,7 +43,6 @@ RUN         apt-get update \
 
             && curl -sS https://getcomposer.org/installer | php \
             && mv composer.phar /usr/local/bin/composer \
-            && mkdir -p /var/www/.composer/vendor/ \
 
 ###############
 # Install NPM #
