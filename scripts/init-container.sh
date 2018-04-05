@@ -10,5 +10,6 @@ groupmod -g $(stat -c "%g" $1) www-data
 # Allow user www-data to log in to use development tools
 usermod -s /bin/bash www-data
 
-# Make homedir of www-data writable for www-data user for usage by development tool caches etc.
+# Make home and www dirs of www-data writable for www-data user for usage by development tool caches etc.
+chown -R www-data: /var/www
 chown -R www-data: /www
