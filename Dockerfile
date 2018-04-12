@@ -56,6 +56,7 @@ RUN         apt-get update \
 #######################
 
             && npm install -g \
+                bower \
                 grunt-cli \
                 gulp-cli
 
