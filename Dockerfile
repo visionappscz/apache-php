@@ -30,6 +30,7 @@ RUN         apt-get update \
             && docker-php-ext-install gd \
             && docker-php-ext-install intl \
             && docker-php-ext-install mbstring \
+            && docker-php-ext-install mysqli \
             && docker-php-ext-install pdo_mysql \
             && docker-php-ext-install pdo_pgsql \
             && docker-php-ext-configure zip --with-libzip \
