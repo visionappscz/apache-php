@@ -1,4 +1,4 @@
-FROM        php:7.1-apache
+FROM        php:7.2-apache
 
 ######################################
 # Install and configure dependencies #
@@ -20,7 +20,7 @@ RUN         apt-get update \
                 libpng-dev \
                 libzip-dev \
                 mysql-client \
-                postgresql-9.4 \
+                postgresql-9.5 \
                 postgresql-server-dev-all \
                 unzip \
                 zip \
