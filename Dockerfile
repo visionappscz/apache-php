@@ -1,4 +1,4 @@
-FROM        php:7.2-apache
+FROM        php:7.3-apache
 
 ######################################
 # Install and configure dependencies #
@@ -22,6 +22,7 @@ RUN         apt-get update \
                 mysql-client \
                 postgresql-9.5 \
                 postgresql-server-dev-all \
+                rsync \
                 unzip \
                 zip \
             && rm -rf /var/lib/apt/lists/* \
