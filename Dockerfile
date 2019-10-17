@@ -50,7 +50,7 @@ RUN         apt-get update \
 # Install NPM #
 ###############
 
-            && curl -sL https://deb.nodesource.com/setup_8.x | bash - \
+            && curl -sL https://deb.nodesource.com/setup_10.x | bash - \
             && apt install -y nodejs \
 
 #######################
