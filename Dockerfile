@@ -1,4 +1,4 @@
-FROM        php:7.3-apache
+FROM        php:7.4-apache
 
 ######################################
 # Install and configure dependencies #
@@ -13,6 +13,7 @@ RUN         apt-get update \
                 g++ \
                 git \
                 gnupg \
+                libonig-dev \
                 libfreetype6 \
                 libicu-dev \
                 libjpeg-dev \
@@ -27,14 +28,14 @@ RUN         apt-get update \
                 zip \
             && rm -rf /var/lib/apt/lists/* \
             && docker-php-ext-install exif \
-            && docker-php-ext-configure gd --with-jpeg-dir=/usr/ \
+            && docker-php-ext-configure gd --with-jpeg \
             && docker-php-ext-install gd \
             && docker-php-ext-install intl \
             && docker-php-ext-install mbstring \
             && docker-php-ext-install mysqli \
             && docker-php-ext-install pdo_mysql \
             && docker-php-ext-install pdo_pgsql \
-            && docker-php-ext-configure zip --with-libzip \
+            && docker-php-ext-configure zip \
             && docker-php-ext-install zip \
             && a2enmod rewrite \
 
