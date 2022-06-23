@@ -1,4 +1,4 @@
-FROM        php:7.4-apache
+FROM        php:8.1-apache
 
 ######################################
 # Install and configure dependencies #
@@ -21,7 +21,7 @@ RUN         apt-get update \
                 libpng-dev \
                 libzip-dev \
                 mariadb-client \
-                postgresql-9.5 \
+                postgresql-13 \
                 postgresql-server-dev-all \
                 rsync \
                 unzip \
@@ -38,26 +38,13 @@ RUN         apt-get update \
             && docker-php-ext-configure zip \
             && docker-php-ext-install zip \
             && a2enmod rewrite \
-
-
-####################
-# Install Composer #
-####################
-
+# Install Composer
             && curl -sS https://getcomposer.org/installer | php \
             && mv composer.phar /usr/local/bin/composer \
-
-###############
-# Install NPM #
-###############
-
-            && curl -sL https://deb.nodesource.com/setup_10.x | bash - \
+# Install NPM
+            && curl -sL https://deb.nodesource.com/setup_18.x | bash - \
             && apt install -y nodejs \
-
-#######################
-# Install Grunt, Gulp #
-#######################
-
+# Install Grunt, Gulp
             && npm install -g \
                 bower \
                 grunt-cli \
