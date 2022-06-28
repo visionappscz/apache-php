@@ -42,10 +42,11 @@ RUN         apt-get update \
             && curl -sS https://getcomposer.org/installer | php \
             && mv composer.phar /usr/local/bin/composer \
 # Install NPM
-            && curl -sL https://deb.nodesource.com/setup_18.x | bash - \
+            && curl -sL https://deb.nodesource.com/setup_16.x | bash - \
             && apt install -y nodejs \
 # Install Grunt, Gulp
-            && npm install -g \
+            && npm install --location=global \
+                npm \
                 bower \
                 grunt-cli \
                 gulp-cli

@@ -28,3 +28,10 @@ Installed tools:
 * Bower
 * Grunt
 * Gulp
+
+## Releasing
+
+* Build the container: `docker build . visionappscz/apache-php:<tag>`
+* Push the image to the registry: `docker push visionappscz/apache-php:<tag>`
+* Push the changes to GitHub and merge them into `master`
+* Tag the release `git tag v<tag>` 
